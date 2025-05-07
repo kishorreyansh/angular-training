@@ -1,0 +1,71 @@
+<h3 class="text-center">Lets Learn Data Binding</h3>
+<div class="border p-2 m-2">
+  <div>User Name is: {{ userName }}</div>
+  <div>User Name is: <span [innerHTML]="userName"></span></div>
+  <img src="{{ imgUrl }}" alt="kohli" width="250" height="300" />
+  <img [src]="imgUrl" alt="kohli" width="250" height="300" />
+  <img bind-src="imgUrl" alt="kohli" width="250" height="300" /><br />
+  <div class="mt-2">
+    <div>1 way data Binding <input type="text" value="{{ userName }}" /></div>
+    <input type="text" [value]="userName" />
+    <input type="text" bind-value="userName" />
+    <input type="text" [(ngModel)]="userName" />
+    <input type="text" bindon-ngModel="userName" />
+  </div>
+
+  <div class="mt-2">
+    <button class="btn btn-primary" disabled="{{ false }}">Click Me</button>
+    <button class="btn btn-primary mx-2" [disabled]="false">Click Me</button>
+    <button class="btn btn-primary mx-2" bind-disabled="false">Click Me</button>
+  </div>
+
+  <div class="mt-2">
+    <button class="btn btn-warning" (click)="f1()">Click Me</button>
+    <button class="btn btn-warning mx-2" on-click="f1()">Click Me</button>
+  </div>
+
+  <div class="mt-2">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td [colSpan]="myColSpan">John</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="m-2 border">
+    <div>Addition</div>
+    <input [(ngModel)]="num1" />
+    <input [(ngModel)]="num2" />
+    <div>Addition of {{ num1 }} and {{ num2 }} is {{ +num1 + +num2 }}</div>
+  </div>
+
+  <div class="p-2 m-2 border">
+    <div>Addition</div>
+    <input #mybox1 />
+    <input ref-mybox2 />
+    <button
+      class="btn btn-success mx-2"
+      (click)="addition(mybox1.value, mybox2.value)"
+    >
+      Add
+    </button>
+    <div>Addition of Two Number is {{ addResult }}</div>
+  </div>
+</div>
