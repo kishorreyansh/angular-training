@@ -1,13 +1,35 @@
+<style>
+  img {
+    border: 5px dotted lightcoral;
+  }
+</style>
+
 <h3 class="text-center">Lets Learn Data Binding</h3>
 <div class="border p-2 m-2">
-  <div>User Name is: {{ userName }}</div>
+  <div style="color: yellow">User Name is: {{ userName }}</div>
   <div>User Name is: <span [innerHTML]="userName"></span></div>
   <img src="{{ imgUrl }}" alt="kohli" width="250" height="300" />
   <img [src]="imgUrl" alt="kohli" width="250" height="300" />
   <img bind-src="imgUrl" alt="kohli" width="250" height="300" /><br />
+
+  <div>Fav Actor is: {{ favActor }}</div>
+  <div [id]="favActor">Fav Actor is: {{ favActor }}</div>
+  <img src="{{ imgFavUrl1 }}" alt="prabhas" width="250" height="300" />
+  <img [src]="imgFavUrl" alt="prabhas" width="250" height="300" />
+  <img bind-src="imgFavUrl2" alt="prabhas" width="250" height="300" />
+  <div class="mt-3">
+    1 way data Binding <input type="text" value="{{ favActor }}" />
+  </div>
+
   <div class="mt-2">
-    <div>1 way data Binding <input type="text" value="{{ userName }}" /></div>
+    <!-- 1 way data Binding-->
+    <!--Interpolation-->
+    <div class="mb-3">
+      1 way data Binding <input type="text" value="{{ userName }}" />
+    </div>
+    <!-- property binding-->
     <input type="text" [value]="userName" />
+    <!-- property binding without [] we use bind-value-->
     <input type="text" bind-value="userName" />
     <input type="text" [(ngModel)]="userName" />
     <input type="text" bindon-ngModel="userName" />

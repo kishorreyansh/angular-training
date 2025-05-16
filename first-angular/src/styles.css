@@ -1,1 +1,6 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+
+.dark-mode{
+    background-color: lightcoral;
+    color: black;
+}

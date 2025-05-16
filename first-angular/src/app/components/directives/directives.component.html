@@ -1,0 +1,50 @@
+<div class="border p-2 m-2">
+  <h3>If Else (Before Angular 17)</h3>
+  <div>Change the Num Value and Check if it is even or odd</div>
+  <input type="number" [(ngModel)]="num" />
+  <div *ngIf="num % 2 == 0">{{ num }} is Even</div>
+  <div *ngIf="num % 2 != 0">{{ num }} is Odd</div>
+</div>
+
+<div class="border p-2 m-2">
+  <h3>If Else (After Angular 17)</h3>
+  <div>Change the Num Value and Check if it is even or odd</div>
+  <input type="number" [(ngModel)]="num" />
+  @if(num%2==0){
+  <div>{{ num }} is Even</div>
+  }@else {
+  <div>{{ num }} is Odd</div>
+  }
+</div>
+
+<div class="border p-2 m-2">
+  <h3>Switch Case</h3>
+  <div>Change the dayNumber Value and Check if it is even or odd</div>
+  <input type="number" [(ngModel)]="dayNumber" />
+  @switch(dayNumber) { @case (1) {
+  <h4>Monday</h4>
+  } @case (2) {
+  <h4>Tuesday</h4>
+  } @case (3) {
+  <h4>Wednesday</h4>
+  } @case (4) {
+  <h4>Thursday</h4>
+  } @case (5) {
+  <h4>Friday</h4>
+  } @case (6) {
+  <h4>Saturday</h4>
+  } @case (7) {
+  <h4>Sunday</h4>
+  } @default {
+  <h4>Not a Valid Day</h4>
+  } }
+</div>
+
+<div class="border p-2 m-2">
+  <h3>Display Dropdown ValuesFor Loop Case</h3>
+  <select>
+    @for(state of stateNames; track $index){
+    <option>{{ state }}</option>
+    }
+  </select>
+</div>
