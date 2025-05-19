@@ -1,0 +1,63 @@
+<h3 class="text-center">Assignment 2</h3>
+<div class="border p-2 m-2">
+  <div class="mt-2 text-center">
+    <button class="btn btn-warning" (click)="showTableGridView()">
+      Show Grid / Show Table
+    </button>
+  </div>
+  <div class="mt-2">
+    @if(flag){
+    <div class="border p-2 m-2">
+      <h4 class="text-center">User List Grid</h4>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Serial No</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Company Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- using trachBy-->
+          <!-- trackBy $emp.eId-->
+          @for(user of users; track $index){
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.address.city }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.website }}</td>
+            <td>{{ user.company.name }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    }@else{
+    <div class="row d-flex flex-wrap mt-2">
+      @for (user of users; track $index) {
+      <div class="col-sm-3 d-flex">
+        <div class="card text-center flex-fill d-flex flex-column">
+          <div class="card-body mt-2 d-flex flex-column">
+            <h5 class="card-title">{{ user.name }}</h5>
+            <p class="card-text">{{ user.username }}</p>
+            <p class="card-text">{{ user.email }}</p>
+            <p class="card-text">{{ user.address.city }}</p>
+            <p class="card-text">{{ user.phone }}</p>
+            <p class="card-text">{{ user.website }}</p>
+            <p class="card-text">{{ user.company.name }}</p>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>

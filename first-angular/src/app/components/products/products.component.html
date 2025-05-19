@@ -1,0 +1,65 @@
+<h3 class="text-center">Product List</h3>
+<hr />
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-4">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="searchProduct"
+      />
+    </div>
+    <div class="col-sm-2">
+      <button
+        class="btn btn-outline-danger my-2 my-sm-0"
+        type="submit"
+        (click)="sortAscending()"
+      >
+        Sort Asc
+      </button>
+      <button
+        class="btn btn-outline-danger mx-2"
+        type="submit"
+        (click)="sortDescending()"
+      >
+        Sort Desc
+      </button>
+    </div>
+  </div>
+  <div class="row d-flex flex-wrap mt-2">
+    <!--@for (product of productsArray | paginate : {itemsPerPage: 4, currentPage:
+    p}; track $index) { -->
+    @for (product of searchProducts | paginate : {itemsPerPage: 4, currentPage:
+    p}; track $index) {
+    <div class="col-sm-3 d-flex">
+      <div class="card text-center h-100 d-flex flex-column">
+        <img
+          src="{{ product.image }}"
+          class="card-img-top product-img"
+          alt="products"
+          height="250px"
+        />
+        <div class="card-body flex-grow-1 d-flex flex-column">
+          <h5 class="card-title">{{ product.category.toUpperCase() }}</h5>
+          <p class="card-text text-truncate">{{ product.title }}</p>
+          <p class="card-text description-truncate">
+            {{ product.description }}
+          </p>
+          <p class="card-text">{{ product.price }}</p>
+          <p class="card-text">{{ product.rating.rate }}</p>
+          <div class="mt-auto">
+            <a href="#" class="btn btn-danger w-100">Go Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="row">
+    <div class="col-sm-4 offset-4 mt-2">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

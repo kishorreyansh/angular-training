@@ -1,3 +1,4 @@
+<h3 class="text-center">Directives</h3>
 <div class="border p-2 m-2">
   <h3>If Else (Before Angular 17)</h3>
   <div>Change the Num Value and Check if it is even or odd</div>
@@ -41,10 +42,64 @@
 </div>
 
 <div class="border p-2 m-2">
-  <h3>Display Dropdown ValuesFor Loop Case</h3>
-  <select>
+  <h3>Display Dropdown Values For Loop Case</h3>
+  <select [(ngModel)]="selectedState">
     @for(state of stateNames; track $index){
     <option>{{ state }}</option>
     }
   </select>
+</div>
+
+<div class="mt-2">
+  <ul>
+    @for(state of stateNames; track $index){
+    <li>{{ state }}</li>
+    }
+  </ul>
+</div>
+
+<div class="border p-2 m-2">
+  <h3>Country List Dropdown</h3>
+  <input list="states" />
+  <datalist id="states">
+    @for(state of stateNames; track $index){
+    <option>{{ state }}</option>
+    }
+  </datalist>
+</div>
+
+<div class="border p-2 m-2">
+  <h3>Country List Grid</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Serial No</th>
+        <th>Emp Id</th>
+        <th>Emp Name</th>
+        <th>Emp Sal</th>
+        <th>Gender</th>
+        <th>isFirst</th>
+        <th>isLast</th>
+        <th>isEven</th>
+        <th>isOdd</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- using trachBy-->
+      <!-- trackBy $emp.eId-->
+      @for(emp of employees; track $index){
+      <tr [style.color]="$first ? 'red' : 'green'">
+        <td>{{ $index + 1 }}</td>
+        <td>{{ emp.eId }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.sal }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>{{ $first }}</td>
+        <td>{{ $last }}</td>
+        <td>{{ $even }}</td>
+        <td>{{ $odd }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
 </div>

@@ -1,0 +1,57 @@
+<h3 class="text-center">Product List</h3>
+<hr />
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-4">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="searchPlayer"
+      />
+    </div>
+    <div class="col-sm-2">
+      <button
+        class="btn btn-outline-danger my-2 my-sm-0"
+        type="submit"
+        (click)="sortAscending()"
+      >
+        Sort Asc
+      </button>
+      <button
+        class="btn btn-outline-danger mx-2"
+        type="submit"
+        (click)="sortDescending()"
+      >
+        Sort Desc
+      </button>
+    </div>
+  </div>
+  <div class="row d-flex flex-wrap mt-2">
+    @for (player of searchPlayers | paginate : {itemsPerPage: 8, currentPage:
+    p}; track $index) {
+    <div class="col-sm-3 d-flex">
+      <div class="card text-center h-100 d-flex flex-column">
+        <div class="card-body flex-grow-1 d-flex flex-column">
+          <h5 class="card-title">{{ player.Player_Name.toUpperCase() }}</h5>
+          <p class="card-text">{{ player.DOB }}</p>
+          <p class="card-text">
+            {{ player.Batting_Hand }}
+          </p>
+          <p class="card-text">{{ player.Bowling_Skill }}</p>
+          <p class="card-text">{{ player.Country }}</p>
+          <div class="mt-auto">
+            <a href="#" class="btn btn-danger w-100">Player Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="row">
+    <div class="col-sm-4 offset-4 mt-2">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

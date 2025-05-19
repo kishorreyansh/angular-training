@@ -1,0 +1,19 @@
+.description-truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines */
+  -webkit-box-orient: vertical;
+  min-height: 3em; /* Optional: Keeps consistent height */
+}
+
+.product-img {
+  object-fit: contain;
+  width: 100%;
+  height: 250px;
+  padding-top: 10px; /* Add spacing from top */
+}
+
+
+
+
+
