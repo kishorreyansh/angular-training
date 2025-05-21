@@ -4,10 +4,14 @@ import { Assignment1Component } from '../assignment1/assignment1/assignment1.com
 import { DirectivesComponent} from '../directives/directives.component';
 import { ProductsComponent } from '../products/products.component';
 import { Assignment2Component } from '../assignment2/assignment2.component';
+import { MyModalComponent } from '../my-modal/my-modal.component';
+import { SweetalertDemoComponent } from '../sweetalert-demo/sweetalert-demo.component';
+import { EmployeecrudComponent } from '../employeecrud/employeecrud.component';
+import { PipesComponent } from '../pipes/pipes.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent],
+  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

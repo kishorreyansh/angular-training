@@ -41,14 +41,17 @@
           alt="products"
           height="250px"
         />
-        <div class="card-body flex-grow-1 d-flex flex-column">
+        <div class="card-body flex-grow-1 d-flex flex-column" zoomIn>
           <h5 class="card-title">{{ product.category.toUpperCase() }}</h5>
           <p class="card-text text-truncate">{{ product.title }}</p>
           <p class="card-text description-truncate">
             {{ product.description }}
           </p>
           <p class="card-text">{{ product.price }}</p>
-          <p class="card-text">{{ product.rating.rate }}</p>
+          <p class="card-text">
+            {{ product.rating.rate }}
+            <fa-icon [icon]="faStar"></fa-icon>
+          </p>
           <div class="mt-auto">
             <a href="#" class="btn btn-danger w-100">Go Details</a>
           </div>

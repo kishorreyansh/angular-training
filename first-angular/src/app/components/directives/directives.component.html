@@ -85,7 +85,7 @@
       </tr>
     </thead>
     <tbody>
-      <!-- using trachBy-->
+      <!-- using trackBy-->
       <!-- trackBy $emp.eId-->
       @for(emp of employees; track $index){
       <tr [style.color]="$first ? 'red' : 'green'">
@@ -102,4 +102,45 @@
       }
     </tbody>
   </table>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Lets Understand ngStyle</div>
+  <input type="number" [(ngModel)]="num" />
+  <p [style.color]="num % 2 == 0 ? 'blue' : 'red'">Add Color Dynamically</p>
+  <p [style.fontSize.px]="num % 2 == 0 ? 48 : 24">Add style conditionally</p>
+  <p [style.background-color]="num % 2 == 0 ? 'green' : 'blue'">
+    Add style conditionally
+  </p>
+  <p [ngStyle]="num % 2 == 0 ? myStyle1 : myStyle2">
+    NgStyle for multiple values
+  </p>
+  <p [ngStyle]="myFunction()">NgStyle for multiple values</p>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Lets Understand ngClass</div>
+  <input class="m-2 p-2" type="number" [(ngModel)]="num" />
+  <button [ngClass]="['btn', num % 2 == 0 ? 'btn-success' : 'btn-danger']">
+    Test Button
+  </button>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Lets understand ng-template</div>
+  <div *ngIf="num % 2 == 0; else oddBlock">{{ num }} is even</div>
+  <ng-template #oddBlock> {{ num }} is isOdd</ng-template>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Lets understand ng-container</div>
+  <div *ngIf="num % 2 == 0; else oddBlock">{{ num }} is even</div>
+  <ng-template #oddBlock> {{ num }} is isOdd</ng-template>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Lets understand Custom directive</div>
+  <input appNumberonly />
+  <!--input is host element and numberonly is directive-->
+  <h2 appHighlight>This Element hosts appHighlight directive</h2>
 </div>

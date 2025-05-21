@@ -21,6 +21,9 @@ export class DatabindingComponent {
   num1: number = 1;
   num2: number = 1;
 
+  no1: number = 10;
+  no222: number = 20;
+
   addResult:number =0;
   addition(val1: string | number, val2: string | number){
     this.addResult = +val1 + +val2;

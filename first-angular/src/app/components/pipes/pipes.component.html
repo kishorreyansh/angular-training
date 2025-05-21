@@ -1,0 +1,103 @@
+<h3 class="text-center">Let's Learn Pipeline</h3>
+<hr />
+<div class="border p-2 m-2">
+  <div>LowerCase, Uppercase, Title Case</div>
+  <input type="text" [(ngModel)]="userName" />
+  <div>UserName: {{ userName }}</div>
+  <div>UserName Upper Case: {{ userName | uppercase }}</div>
+  <div>UserName Lower Case: {{ userName | lowercase }}</div>
+  <div>UserName Lower Case: {{ userName | titlecase }}</div>
+</div>
+<div class="border p-2 m-2">
+  <div>{{ salary }}</div>
+  <div>Salary: {{ salary }}</div>
+  <div>Salary is: : {{ salary | currency }}</div>
+  <div>Salary is: : {{ salary | currency : "USD " : "code" }}</div>
+  <div>Salary is: : {{ salary | currency : "INR" }}</div>
+  <div>Salary is: : {{ salary | currency : "&euro;" }}</div>
+  <div>Salary is: : {{ salary | currency : "&#20803;" }}</div>
+  <!-- INPUT | pipeName: argument-->
+</div>
+<div class="border p-2 m-2">
+  <div>DATE PIPE</div>
+  <div>{{ today }}</div>
+  <div>Date: {{ today | date }}</div>
+  <div>Short Date: {{ today | date : "shortDate" }}</div>
+  <div>Medium Date: {{ today | date : "mediumDate" }}</div>
+  <div>Long Date: {{ today | date : "longDate" }}</div>
+  <div>Date: {{ today | date : "fullDate" }}</div>
+  <div>Long Time: {{ today | date : "longTime" }}</div>
+  <div>Full Time: {{ today | date : "fullTime" }}</div>
+  <div>Date Format: {{ today | date : "dd/MM/yyyy" }}</div>
+</div>
+<div class="border p-2 m-2">
+  <div>NUMBER PIPE</div>
+  <div>{{ 12.111222333 | number : "3.2-5" }}</div>
+  <!-- before decimal 3 digits, after decimals min to max i.e., 2 to 5-->
+  <div>{{ 12.1 | number : "3.2-5" }}</div>
+  <div>{{ 0.5 | number : "3.2-5" }}</div>
+  <div>{{ 0.5 | percent }}</div>
+  <!-- 0.5 means 50 percent-->
+</div>
+
+<div class="border p-2 m-2">
+  <div>KEY VALUE PIPE</div>
+  @for(entry of user | keyvalue; track $index){
+  <div>{{ entry.key }} -- {{ entry.value }}</div>
+  }
+</div>
+
+<div class="border p-2 m-2">
+  <div>JSON PIPE</div>
+  <div>{{ user }}</div>
+  <div>{{ user | json }}</div>
+</div>
+
+<div class="border p-2 m-2">
+  <div>SLICE PIPE</div>
+  <div>{{ numArr }}</div>
+  <div>{{ numArr | slice : 2 }}</div>
+  <!-- starts with 2 -->
+  <div>{{ numArr | slice : 2 : 4 }}</div>
+  <!-- starts with 2 and goes till 4 -->
+  <div>{{ numArr | slice : 2 : -1 }}</div>
+</div>
+
+<div class="border p-2 m-2">
+  <div>CUSTOM PIPE - REMAINING CHARACTER</div>
+  <textarea [(ngModel)]="msg" maxlength="100"></textarea>
+  <div>Message: {{ msg }}</div>
+  <div>Remaining Characters: {{ msg | remaining : 100 }}</div>
+
+  <textarea [(ngModel)]="msg" maxlength="200"></textarea>
+  <div>Remaining Characters: {{ msg | remaining : 200 }}</div>
+</div>
+
+<div class="border p-2 m-2">
+  <div>ORDINAL CUSTOM PIPE</div>
+  <input type="number" [(ngModel)]="num" />
+  <div>Number Value: {{ num }}</div>
+</div>
+
+<div class="border p-2 m-2">
+  <div>IMPROPER PIPE</div>
+  <div>Array with out Sort</div>
+  @for(item of arr; track $index){
+  <b>{{ item }} &nbsp;</b>
+  }
+  <div>Array with Sort</div>
+  <div>
+    @for (item of arr2 | customsort; track $index) {
+    <b>{{ item }} &nbsp;</b>
+    }
+    <div>
+      <input type="number" #newElement />
+      <button
+        class="btn btn-success m-2"
+        (click)="arr2.push(+newElement.value)"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+</div>

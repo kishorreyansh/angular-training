@@ -1,0 +1,81 @@
+<div class="border p-2 m-2">
+  <h2 class="text-center">Assignment - 3</h2>
+  <div class="border p-2 m-2">
+    <h4 class="text-center">Employee List Grid</h4>
+    <div>
+      <div class="row p-2 m-2">
+        <div class="col-sm-4 offset-4">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            [(ngModel)]="searchEmployee"
+          />
+        </div>
+        <div class="col-sm-2">
+          <button
+            class="btn btn-outline-danger my-2 my-sm-0"
+            type="submit"
+            (click)="sortAscending()"
+          >
+            Sort Asc
+          </button>
+          <button
+            class="btn btn-outline-danger mx-2"
+            type="submit"
+            (click)="sortDescending()"
+          >
+            Sort Desc
+          </button>
+          <fa-icon [icon]="faUserPlus" (click)="addEmployee()"></fa-icon>
+        </div>
+      </div>
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Serial No</th>
+          <th>Emp Id</th>
+          <th>Emp Name</th>
+          <th>Emp Sal</th>
+          <th>Gender</th>
+          <th>Edit</th>
+          <th>View</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- using trackBy-->
+        <!-- trackBy $emp.eId-->
+        <!-- @for(emp of employees; track $index){ -->
+        @for(emp of searchEmployees; track $index){
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+          <td>
+            <fa-icon [icon]="faEdit" (click)="editUserDetails(emp)"></fa-icon>
+          </td>
+          <td>
+            <fa-icon [icon]="faEye" (click)="viewUserDetails(emp)"></fa-icon>
+          </td>
+          <td>
+            <fa-icon
+              [icon]="faTrash"
+              (click)="deleteUserDetails(emp.eId)"
+            ></fa-icon>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    <app-usermodal [employee]="viewUserData"></app-usermodal>
+    <app-editusermodal
+      [editemployee]="editUserData"
+      (saveEmployee)="updateEmployee($event)"
+    ></app-editusermodal>
+  </div>
+</div>
