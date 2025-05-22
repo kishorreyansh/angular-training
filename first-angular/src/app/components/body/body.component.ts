@@ -9,10 +9,11 @@ import { SweetalertDemoComponent } from '../sweetalert-demo/sweetalert-demo.comp
 import { EmployeecrudComponent } from '../employeecrud/employeecrud.component';
 import { PipesComponent } from '../pipes/pipes.component';
 import { Pipeassignment4Component } from '../pipeassignment4/pipeassignment4.component';
+import { ParentComponent } from '../parent/parent.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component],
+  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component,ParentComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

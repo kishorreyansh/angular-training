@@ -1,0 +1,20 @@
+<div class="border border-5 p-2 m-2 text-center">
+  <div>I am Parent Component</div>
+  <div>My Own Data a is: {{ a }}</div>
+  <div>My Child1 userName is {{ child1.userName }}</div>
+  <div>My Child2 Address in Parent is {{ address_parent }}</div>
+  <div class="row">
+    <div class="col-sm-6 border border-5">
+      <app-child1 [a]="a" #child1></app-child1>
+      <!-- #-->
+      <!-- a passing as props-->
+    </div>
+    <div class="col-sm-6 border border-5">
+      <app-child2
+        [child2_a]="a"
+        [child2_username]="child1.userName"
+        (addressEvent)="receiveDataFromChild($event)"
+      ></app-child2>
+    </div>
+  </div>
+</div>
