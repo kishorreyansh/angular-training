@@ -8,10 +8,11 @@ import { MyModalComponent } from '../my-modal/my-modal.component';
 import { SweetalertDemoComponent } from '../sweetalert-demo/sweetalert-demo.component';
 import { EmployeecrudComponent } from '../employeecrud/employeecrud.component';
 import { PipesComponent } from '../pipes/pipes.component';
+import { Pipeassignment4Component } from '../pipeassignment4/pipeassignment4.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent],
+  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

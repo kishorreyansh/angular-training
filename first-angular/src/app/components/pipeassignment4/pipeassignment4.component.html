@@ -1,0 +1,93 @@
+<div class="border p-2 m-2">
+  <h2 class="text-center">Pipe Assignment - 4</h2>
+  <div class="border p-2 m-2">
+    <div>ORDINAL CUSTOM PIPE</div>
+    <input type="number" [(ngModel)]="num" />
+    <div>Number Value: {{ num | ordinal }}</div>
+  </div>
+  <div class="border p-2 m-2">
+    <div>NUMBER TO ROMAN CUSTOM PIPE</div>
+    <input type="number" [(ngModel)]="numroman" />
+    <div>Roman Value: {{ numroman | numbertoroman }}</div>
+  </div>
+  <div class="border p-2 m-2">
+    <div>DATE CUSTOM PIPE</div>
+    <div class="mb-3">
+      <label for="datePicker" class="form-label">Select Date</label>
+      <input
+        type="date"
+        id="datePicker"
+        class="form-control"
+        style="width: 200px"
+        [(ngModel)]="dateVal"
+      />
+    </div>
+    <p>Selected Date: {{ dateVal }}</p>
+    <div>Age is : {{ dateVal | dateage }}</div>
+  </div>
+
+  <div class="border p-2 m-2">
+    <h4 class="text-center">Employee List - Salutation Pipe</h4>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Serial No</th>
+          <th>Emp Id</th>
+          <th>Emp Name</th>
+          <th>Emp Sal</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- using trackBy-->
+        <!-- trackBy $emp.eId-->
+        @for(emp of employees; track $index){
+        <tr [style.color]="$first ? 'red' : 'green'">
+          <td>{{ $index + 1 }}</td>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name | salutation : emp.gender }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="border p-2 m-2">
+    <h4 class="text-center">Employee List - Search Pipe</h4>
+    <div class="col-sm-4 offset-4">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="searchEmployee"
+      />
+    </div>
+    <table class="table table-bordered table-striped m-2 p-2">
+      <thead>
+        <tr>
+          <th>Serial No</th>
+          <th>Emp Id</th>
+          <th>Emp Name</th>
+          <th>Emp Sal</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- using trackBy-->
+        <!-- trackBy $emp.eId-->
+        @for(emp of employees | searchemployee: searchEmployee; track $index){
+        <tr [style.color]="$first ? 'red' : 'green'">
+          <td>{{ $index + 1 }}</td>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name | salutation : emp.gender }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
