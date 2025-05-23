@@ -10,10 +10,11 @@ import { EmployeecrudComponent } from '../employeecrud/employeecrud.component';
 import { PipesComponent } from '../pipes/pipes.component';
 import { Pipeassignment4Component } from '../pipeassignment4/pipeassignment4.component';
 import { ParentComponent } from '../parent/parent.component';
+import { Assignment5Component } from '../assignment5/assignment5.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component,ParentComponent],
+  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component,ParentComponent,Assignment5Component],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

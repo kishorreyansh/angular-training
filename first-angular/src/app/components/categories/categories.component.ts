@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-categories',
+  //imports: [CategoryItemComponent],
   imports: [],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })
 export class CategoriesComponent {
+
+  // Category Data Communication from Parent to Child
   //   allCategories = [
   //   { label: 'Grocery', img_url: 'https://rukminim2.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100' },
   //   { label: 'Mobile', img_url: 'https://rukminim2.flixcart.com/flap/72/72/image/22fddf3c7da4c4f4.png?q=100' },
