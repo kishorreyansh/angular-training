@@ -11,10 +11,12 @@ import { PipesComponent } from '../pipes/pipes.component';
 import { Pipeassignment4Component } from '../pipeassignment4/pipeassignment4.component';
 import { ParentComponent } from '../parent/parent.component';
 import { Assignment5Component } from '../assignment5/assignment5.component';
+import { Math1Component } from '../math1/math1.component';
+import { Math2Component } from '../math2/math2.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component,ParentComponent,Assignment5Component],
+  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component,ParentComponent,Assignment5Component,Math1Component,Math2Component],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
