@@ -17,6 +17,7 @@ export class DatabindingComponent {
   imgFavUrl: string = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnzr2M84xnOvEb6smMGBcbijc6gzgiN_2FDQ&s";
   imgFavUrl1: string = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4Rn_hO9SUcQQ7Nsqm6ZbR50srMe-bYtVkfA&s";
   imgFavUrl2: string = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh04Ew91zzpS63c9jbv4LMBefSD0CTZJU4Xw&s";
+  imgFavUrl3: string = "./Prabhas.png"
 
   num1: number = 1;
   num2: number = 1;

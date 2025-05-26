@@ -1,0 +1,55 @@
+<div class="border p-2 m-2">
+  <div class="mt-2 text-center">
+    <button
+      type="button"
+      class="btn btn-warning dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      style="width: 182px"
+    >
+      Select
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item" (click)="displayAllEmployees()"
+          >Get All Employees</a
+        >
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="displayMaleEmployees()"
+          >Get Male Emloyees</a
+        >
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="displayFemaleEmployees()"
+          >Get Female Emloyees</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="border p-2 m-2">
+    <h4 class="text-center">Employee List</h4>
+    <table class="table table-bordered table-striped m-2 p-2">
+      <thead>
+        <tr>
+          <th>Serial No</th>
+          <th>Emp Id</th>
+          <th>Emp Name</th>
+          <th>Emp Sal</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(emp of employees; track $index){
+        <tr [style.color]="$first ? 'red' : 'green'">
+          <td>{{ $index + 1 }}</td>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

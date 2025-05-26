@@ -13,10 +13,11 @@ import { ParentComponent } from '../parent/parent.component';
 import { Assignment5Component } from '../assignment5/assignment5.component';
 import { Math1Component } from '../math1/math1.component';
 import { Math2Component } from '../math2/math2.component';
+import { Assignment6Component } from '../assignment6/assignment6.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component,ParentComponent,Assignment5Component,Math1Component,Math2Component],
+  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent,SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component,ParentComponent,Assignment5Component,Math1Component,Math2Component,Assignment6Component],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
