@@ -1,15 +1,16 @@
 <style>
   img {
-    border: 5px dotted lightcoral;
+    border: 4px dotted lightcoral;
   }
 </style>
 
 <h3 class="text-center">Lets Learn Data Binding</h3>
 <div class="border p-2 m-2">
-  <div style="color: yellow">User Name is: {{ userName }}</div>
+  <div style="color: red">User Name is: {{ userName }}</div>
   <div>User Name is: <span [innerHTML]="userName"></span></div>
   <img src="{{ imgUrl }}" alt="kohli" width="250" height="300" />
-  <img [src]="imgUrl" alt="kohli" width="250" height="300" />
+  <img [src]="imgKohli" alt="kohli" width="250" height="300" />
+  <img [src]="imgRcb" alt="rcb" width="250" height="300" />
   <img bind-src="imgUrl" alt="kohli" width="250" height="300" /><br />
 
   <div>Fav Actor is: {{ favActor }}</div>

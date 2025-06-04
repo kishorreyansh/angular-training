@@ -1,0 +1,25 @@
+<div class="border p-2 m-2">
+  <h4 class="text-center">Http Demo-2 Component</h4>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>eid</th>
+        <th>email</th>
+        <th>sal</th>
+        <th>yearly salary</th>
+        <th>Fullname</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of employees; track $index) {
+      <tr>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>{{ emp.sal }}</td>
+        <td>{{ emp.getYearlySalary() }}</td>
+        <td>{{ emp.getFullName() }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

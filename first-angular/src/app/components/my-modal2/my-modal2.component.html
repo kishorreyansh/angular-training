@@ -1,0 +1,45 @@
+<div class="border p-2 m-2">
+  <button
+    class="btn btn-danger"
+    data-bs-toggle="modal"
+    data-bs-target="#myModal2"
+  >
+    Launch Modal
+  </button>
+  <div
+    class="modal fade"
+    id="myModal2"
+    tabindex="-1"
+    aria-labelledby="myModal2Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="myModal2Label">
+            <ng-content select="h2"></ng-content>
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <ng-content></ng-content>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

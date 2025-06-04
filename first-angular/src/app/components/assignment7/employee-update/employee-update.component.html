@@ -1,0 +1,70 @@
+<!-- src/app/employee-update/employee-update.component.html -->
+@if (showModal) {
+<div class="modal fade" #updateEmployeeModalRef tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Update Employee</h1>
+        <button
+          type="button"
+          class="btn-close"
+          (click)="modalInstance?.hide(); showModal = false"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="col-form-label">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="name"
+              name="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="col-form-label">Username:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="username"
+              name="username"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="col-form-label">Email:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="email"
+              name="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="col-form-label">Website:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="website"
+              name="website"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="modalInstance?.hide(); showModal = false"
+        >
+          Close
+        </button>
+        <button type="button" class="btn btn-success" (click)="saveUpdate()">
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+}

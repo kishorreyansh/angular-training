@@ -15,7 +15,7 @@ export class SweetalertDemoComponent {
 
    openSnackBar(){
     new Snackbar('Helloooo, Good Morning',
-      { position: 'top-center', theme: 'light', timeout: 5000, actionText: 'X' }
+      { position: 'top-center', theme: 'dark', timeout: 5000, actionText: 'X' }
     );
   }
 }

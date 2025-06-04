@@ -1,0 +1,67 @@
+<div class="border p-2 m-2">
+  <div class="row p-2 m-2 justify-content-center">
+    <div
+      class="col-auto d-flex align-items-center justify-content-center gap-2"
+    >
+      <p class="mb-0">Employee Crud Parent Component</p>
+      <fa-icon [icon]="faUserPlus" (click)="addEmployeeDetails()"></fa-icon>
+    </div>
+  </div>
+  <div class="border p-2 m-2">
+    <div class="border p-2 m-2">
+      @if(isLoading){
+      <button class="btn btn-primary" type="button" disabled>
+        <span
+          class="spinner-border spinner-border-sm"
+          aria-hidden="true"
+        ></span>
+        <span role="status" class="text-center">Loading...</span>
+      </button>
+      } @else {
+      <table class="table table-bordered table-striped m-2 p-2">
+        <thead>
+          <tr>
+            <th>Serial No</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Website</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(emp of employees; track $index){
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.username }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.website }}</td>
+            <td>
+              <fa-icon
+                [icon]="faEdit"
+                (click)="updateEmployeeDetails(emp)"
+              ></fa-icon>
+            </td>
+
+            <td>
+              <fa-icon
+                [icon]="faTrash"
+                (click)="deleteEmployeeDetails(emp.id)"
+              ></fa-icon>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+      }
+    </div>
+  </div>
+  <app-employee-add (saveEvent)="addEmployeeToList($event)"></app-employee-add>
+  <app-employee-update
+    (updateEvent)="updateEmployeeInList($event)"
+  ></app-employee-update>
+</div>

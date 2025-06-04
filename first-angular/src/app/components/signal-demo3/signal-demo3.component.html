@@ -1,0 +1,21 @@
+<div class="border p-2 m-2">
+  <h4 class="text-center">Signal Demo 3 Using Effect</h4>
+  <div class="m-2">User Id: {{ userId() }}</div>
+  <button class="btn btn-info mx-2" (click)="incrementUserId()">
+    Increment User Id
+  </button>
+  <button class="btn btn-info mx-2" (click)="destroyEffect()">
+    Destroy Effect
+  </button>
+
+  <div class="card text-center m-2 p-2">
+    <div class="card-body">
+      <h5 class="card-title">{{ userData.userName }}</h5>
+      <p class="card-text">{{ userData.email }}</p>
+      <p class="card-text">{{ userData.phone }}</p>
+      <p class="card-text text-truncate">{{ userData.address.city }}</p>
+
+      <a href="#" class="btn btn-success">Details</a>
+    </div>
+  </div>
+</div>

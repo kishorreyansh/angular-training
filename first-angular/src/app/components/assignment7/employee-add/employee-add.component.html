@@ -1,0 +1,77 @@
+@if (showModal) {
+<div
+  class="modal fade"
+  #addEmployeeModal
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Add Employee Details
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          (click)="modalInstance?.hide(); showModal = false"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="col-form-label">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="name"
+              name="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="col-form-label">User Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="username"
+              name="username"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="col-form-label">Email:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="email"
+              name="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="col-form-label">Website:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="website"
+              name="website"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="modalInstance?.hide(); showModal = false"
+        >
+          Close
+        </button>
+        <button type="button" class="btn btn-danger" (click)="save()">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+}

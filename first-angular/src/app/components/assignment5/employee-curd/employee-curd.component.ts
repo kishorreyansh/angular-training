@@ -50,7 +50,7 @@ export class EmployeeCurdComponent {
     }
 
     addEmployeeToList(newEmp: any) {
-    const newId = Math.max(...this.employees.map(emp => emp.eId)) + 1;
-    this.employees.push({ ...newEmp, eId: newId });
-  }
+      const newId = Math.max(...this.employees.map( emp => emp.eId)) + 1;
+      this.employees.push({ ...newEmp, eId: newId });
+    }
 }

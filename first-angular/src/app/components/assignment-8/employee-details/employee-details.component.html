@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  <table class="table table-striped table-bordered table-hover shadow-sm">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Employee ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <!-- <tbody>
+      @if (employees$ | async; as employees) { @for (emp of employees; track
+      $index) {
+      <tr>
+        <td>{{ $index + 1 }}</td>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.sal }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>
+          <fa-icon [icon]="faTimes" (click)="deleteEmployee(emp.id)"></fa-icon>
+        </td>
+      </tr>
+      } }
+    </tbody> -->
+    <tbody>
+      @if (employees$ | async; as employees) { @if (employees.length > 0) {
+      @for(emp of employees; track emp.id) {
+      <tr>
+        <td>{{ $index + 1 }}</td>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.sal | currency }}</td>
+        <td>{{ emp.gender | titlecase }}</td>
+        <td>
+          <fa-icon [icon]="faTimes" (click)="deleteEmployee(emp.id)"></fa-icon>
+        </td>
+      </tr>
+      } } @else {
+      <tr>
+        <td colspan="6" class="text-center">No Employee Records Found.</td>
+      </tr>
+      } }
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-center gap-3 mt-4">
+    <button class="btn btn-danger" (click)="clearEmployeeDetails()">
+      Clear
+    </button>
+  </div>
+</div>

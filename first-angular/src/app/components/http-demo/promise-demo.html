@@ -1,0 +1,39 @@
+<script>
+  // it accepts value or promise
+  let result = Math.max(10, 20, 30, 40, 50);
+  console.log(result);
+  //value means straightforward answer to question
+  //promise means commiting for example completing an assignment immediately we make promise
+
+  //when we call functions they return value (most of the functions)
+  //some functions wont return value they return promise
+
+  user_url = "https://jsonplaceholder.typicode.com/users";
+  let userPromise = fetch(user_url); //not returning an array of users
+  //fetch method gives promise and returns data in some time
+  console.log(userPromise);
+
+  //HOW CAN WE GET DATA FROM PROMISE
+  //we have 2 options
+  //1. then() 2.async-await
+
+  //Then Approach : we can get data from promise
+  //then is higher order function (fulfill,rejected callback)
+  userPromise.then(
+    (response) => {
+      console.log(response); //intermediate response
+      let jsonPromise = response.json(); // json() again returns promise
+      jsonPromise.then(
+        (finalresponse) => {
+          console.log(finalresponse);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+</script>

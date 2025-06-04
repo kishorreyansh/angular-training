@@ -1,0 +1,16 @@
+<div class="border p-2 m-2">
+  <h4 class="text-center">Signal Demo 2</h4>
+  <div class="border m-2 p-2">
+    <!-- <input type="number" [(ngModel)]="a" /> -->
+    <h4>Num value is {{ num() }}</h4>
+    <h4>Double value is {{ numDouble() }}</h4>
+    <h4>Square value is {{ numSquare() }}</h4>
+    <button class="btn btn-warning" (click)="decrement()">Decrement</button>
+    <button class="btn btn-warning m-2" (click)="reset()">Reset</button>
+    <button class="btn btn-warning m-2" (click)="increment()">Increment</button>
+    <hr />
+    @for(msg of messages();track $index){
+    <div>{{ msg }}</div>
+    }
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<script>
+  user_url = "https://jsonplaceholder.typicode.com/users";
+
+  /*let response = await fetch(user_url); //make this statement to wait until promise is not resolved
+
+  let finalresponse = await response.json();
+  console.log(finalresponse);*/
+
+  // above code dont work, because we need to write async function
+  async function fetchData() {
+    let response = await fetch(user_url); //make this statement to wait until promise is not resolved
+
+    let finalresponse = await response.json();
+    console.log(finalresponse);
+  }
+  fetchData();
+</script>
