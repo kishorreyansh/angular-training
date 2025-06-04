@@ -1,0 +1,119 @@
+<div class="border p-2 m-2">
+  <h4 class="text-center">Template Driven Form</h4>
+  <div class="container">
+    <div class="col-sm-4 offset-4 border border-5 p-3 rounded-3">
+      <form #userForm="ngForm" (submit)="submitUserForm(userForm)">
+        <div class="mb-3">
+          <label for="name" class="form-label">User Name</label>
+          <input
+            type="email"
+            class="form-control"
+            id="name"
+            name="name"
+            aria-describedby="username"
+            #name="ngModel"
+            [(ngModel)]="user.name"
+            required
+            minlength="5"
+          />
+          <span class="text-danger" *ngIf="name.hasError('required')">
+            Name is Required
+          </span>
+          <span class="text-danger" *ngIf="name.hasError('minlength')">
+            Name should be 10 Characters
+          </span>
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            aria-describedby="email"
+            ngModel
+            [(ngModel)]="user.email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="password"
+            ngModel
+            [(ngModel)]="user.password"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="gender" class="form-label">Gender</label>
+          <input
+            type="radio"
+            class="form-check-input"
+            name="gender"
+            id="male"
+            value="male"
+            ngModel
+            [(ngModel)]="user.gender"
+          />Male
+          <input
+            type="radio"
+            class="form-check-input"
+            name="gender"
+            id="female"
+            value="female"
+            ngModel
+            [(ngModel)]="user.gender"
+          />Female
+        </div>
+        <div ngModelGroup="address">
+          <div class="mb-3">
+            <label for="name" class="form-label">Street Name</label>
+            <input
+              type="streetname"
+              class="form-control"
+              id="streetname"
+              name="streetname"
+              aria-describedby="streetname"
+              ngModel
+              [(ngModel)]="user.address.street"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">City</label>
+            <input
+              type="address"
+              class="form-control"
+              id="city"
+              name="city"
+              aria-describedby="city"
+              ngModel
+              [(ngModel)]="user.address.city"
+            />
+          </div>
+        </div>
+
+        <button type="reset" class="btn btn-warning mx-2">Reset</button>
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="userForm.invalid"
+        >
+          Submit
+        </button>
+      </form>
+      <div>
+        Form Data:
+        <pre>
+            {{ userForm.value | json }}
+        </pre>
+        User Object Data:
+        <pre>
+            {{ user | json }}
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>

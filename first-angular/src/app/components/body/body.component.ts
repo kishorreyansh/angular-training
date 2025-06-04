@@ -31,10 +31,13 @@ import { TrafficLightComponent } from '../traffic-light/traffic-light.component'
 import { Assignment8Component } from '../assignment-8/assignment-8.component';
 import { SignalDemo2Component } from '../signal-demo2/signal-demo2.component';
 import { SignalDemo3Component } from '../signal-demo3/signal-demo3.component';
+import { FormDemo1Component } from '../form-demo1/form-demo1.component';
+import { FormDemo2Component } from '../form-demo2/form-demo2.component';
+import { FormDemo3Component } from '../form-demo3/form-demo3.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent, MyModal2Component,   SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component,ParentComponent, TrafficLightComponent,Assignment5Component,Math1Component,Math2Component,Assignment6Component,HttpDemoComponent,Assignment7Component,HttpDemo2Component,ObservableDemo1Component,ObservableDemo2Component,ObservableDemo3Component,ObservableDemo4Component,Message1Component,Message2Component,MessageAddComponent,SubjectDemo1Component,SignalDemo1Component,SignalDemo2Component, SignalDemo3Component, Assignment8Component],
+  imports: [DatabindingComponent,Assignment1Component,DirectivesComponent,Assignment2Component,ProductsComponent,MyModalComponent, MyModal2Component,   SweetalertDemoComponent,EmployeecrudComponent,PipesComponent,Pipeassignment4Component,ParentComponent, TrafficLightComponent,Assignment5Component,Math1Component,Math2Component,Assignment6Component,HttpDemoComponent,Assignment7Component,HttpDemo2Component,ObservableDemo1Component,ObservableDemo2Component,ObservableDemo3Component,ObservableDemo4Component,Message1Component,Message2Component,MessageAddComponent,SubjectDemo1Component,SignalDemo1Component,SignalDemo2Component, SignalDemo3Component, Assignment8Component, FormDemo1Component, FormDemo2Component,FormDemo3Component],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

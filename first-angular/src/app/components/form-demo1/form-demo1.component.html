@@ -1,0 +1,18 @@
+<style>
+  input.ng-invalid {
+    border: 5px solid red;
+  }
+  input.ng-valid {
+    border: 5px solid green;
+  }
+</style>
+
+<div class="border p-2 m-2">
+  <h4 class="text-center">Let's Learn Form Related Class Names</h4>
+  <form name="myForm">
+    Name:
+    <input name="uname" [(ngModel)]="name" required /><br /><br />
+    Age:
+    <input name="uage" [(ngModel)]="age" />
+  </form>
+</div>
