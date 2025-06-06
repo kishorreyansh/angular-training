@@ -74,6 +74,5 @@ export class Assignment1Component {
 
   remainingCharacters(){
     this.count = 100 - this.remValue.length;
-
   }
 }
