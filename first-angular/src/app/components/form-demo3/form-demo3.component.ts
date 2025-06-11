@@ -18,7 +18,7 @@ export class FormDemo3Component {
       password: new FormControl(),
       gender: new FormControl(),
       address: new FormGroup({
-        street: new FormControl(),
+        streetname: new FormControl(),
         city: new FormControl()
       })
     });

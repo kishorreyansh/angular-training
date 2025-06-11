@@ -1,0 +1,39 @@
+<div class="border p-2 m-2">
+  <h4 class="text-center">Template Driven Form</h4>
+  <div class="container">
+    <div class="col-sm-4 offset-4 border border-5 p-3 rounded-3">
+      <form #userForm="ngForm" (submit)="submitUserForm(userForm)">
+        <div class="mb-3">
+          <label for="name" class="form-label">User Name</label>
+          <input
+            type="email"
+            class="form-control"
+            id="name"
+            name="name"
+            aria-describedby="username"
+            minlength="5"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            aria-describedby="email"
+            ngModel
+          />
+        </div>
+        <button type="reset" class="btn btn-warning mx-2">Reset</button>
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="userForm.invalid"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

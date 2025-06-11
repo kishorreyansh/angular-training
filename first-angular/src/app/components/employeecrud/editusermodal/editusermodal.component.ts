@@ -14,7 +14,6 @@ export class EditusermodalComponent {
   @ViewChild('editEmployeeModal') userModalRef!: ElementRef;
   @Output() saveEmployee: EventEmitter<any> = new EventEmitter<any>();
 
-
   private modalInstance: any;
 
   ngAfterViewInit() {
