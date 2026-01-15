@@ -1,0 +1,74 @@
+<div class="border p-2 m-2">
+  <div>My Idol Name is: {{ name }}</div>
+  <div>Property Binding: <span [innerHTML]="profession"></span></div>
+  <div>
+    Property Binding Using bind: <span bind-innerHTML="profession"></span>
+  </div>
+  <div class="m-2 p-2">
+    <img [src]="image" alt="kohli" width="350" height="300" />
+    <img bind-src="image" alt="kohli" width="350" height="300" class="mx-1" />
+  </div>
+  <div>One Way Binding: <input type="text" [value]="name" /></div>
+  <div>Two Way Binding: <input type="text" [(ngModel)]="name" /></div>
+  <div class="m-2 p-2">
+    <button class="btn btn-primary" disabled="{{ flag }}">Click</button>
+    <button class="btn btn-primary mx-2" [disabled]="flag">Click</button>
+  </div>
+  <div class="m-2 p-2">
+    <button class="btn btn-success" (click)="firstEvent()">
+      Event Binding
+    </button>
+    <button class="btn btn-success mx-2" on-click="secondEvent()">
+      Event Binding Click
+    </button>
+  </div>
+  <div class="m-2 p-2">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>$150</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td [attr.colspan]="colSpanValue">Sum: $250</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td [colSpan]="colSpanValue">Sum: $250</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="m-2 border">
+    <h3>Without Template Reference</h3>
+    <input type="number" [(ngModel)]="num1" />
+    <input type="number" [(ngModel)]="num2" class="mx-2" /><br />
+    <span> Adddition of {{ num1 }} and {{ num2 }} is {{ +num1 + +num2 }}</span>
+  </div>
+  <div class="m-2 border">
+    <h3>With Template Reference</h3>
+    <input type="number" #mynum1 />
+    <input type="number" ref-mynum2 class="mx-2" /><br />
+    <button
+      class="btn btn-success m-2 p-2"
+      (click)="addition(mynum1.value, mynum2.value)"
+    >
+      Add</button
+    ><br />
+    Addition is {{ myAddition }}
+  </div>
+</div>
